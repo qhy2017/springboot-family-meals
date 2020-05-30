@@ -1,0 +1,87 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /web
+##    context-parameters: 1242359237@qq.com
+#    session:
+#      store-dir: /session
+#      tracking-modes: COOKIE,URL,SSL
+#      cookie:
+#        name: qhy
+#        max-age: 3600s
+#        http-only: true
+#  tomcat:
+#    accept-count: 100
+#    accesslog:
+#      pattern:  "%{X-Forwarded-For}i %a %{X-B3-TraceId}i %t %m %U %s %b %D"
+#      buffered: true
+#      suffix: .log
+#      prefix: access_log
+#      enabled: false
+#      encoding: UTF-8
+#      check-exists: false
+#      directory: logs
+#      locale:
+#    max-connections: 8192
+#    max-http-form-post-size: 2MB
+#    max-swallow-size: 2MB
+#    max-threads: 200
+
+spring:
+  redis:
+
+#    cluster:
+#      max-redirects:      #集群数量
+#       nodes:
+#         -
+    host: 127.0.0.1
+#    sentinel:             #哨兵模式
+#      master: mymaster
+#      nodes:              #集群节点
+#        -
+#    ssl: false
+#    password:
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 2
+    client-name: redis
+    timeout: 5000
+#  cache:
+#    cache-names:
+#    ehcache:
+#      config: classpath:*.xml
+#    type: REDIS
+  jackson:
+    #日期格式化
+    date-format: yyyy-MM-dd HH:mm:ss
+    serialization:
+      #格式化输出
+      indent_output: true
+      #忽略无法转换的对象
+      fail_on_empty_beans: false
+    #设置空如何序列化
+    defaultPropertyInclusion: ALWAYS
+    deserialization:
+      #允许对象忽略json中不存在的属性
+      fail_on_unknown_properties: false
+    parser:
+      #允许出现特殊字符和转义符
+      allow_unquoted_control_chars: true
+      #允许出现单引号
+      allow_single_quotes: true
+#  servlet:
+#    multipart:
+#      enabled: true
+#      max-file-size: 1MB
+#      max-request-size: 10MB
+#      location: /upload
+#      file-size-threshold: 0B
+# templates文件夹的路径
+  thymeleaf:
+    prefix: classpath:/templates/
+  # templates中的所有文件后缀名，如/templates/main.html
+    suffix: .html

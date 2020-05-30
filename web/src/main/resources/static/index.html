@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    <meta name="viewport"-->
+    <!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>index</title>
+    <!-- 样式-->
+    <link rel="stylesheet" type="text/css" href="./js/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/jqGrid/jqgrid/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/jqGrid/jqgrid/css/css/ui-lightness/jquery-ui-1.8.16.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/highlight/styles/dark.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/ztree/css/zTreeStyle/zTreeStyle.css"/>
+
+    <!-- js文件-->
+    <script type="text/javascript" src="./js/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/jqGrid/jqgrid/js/jquery.jqGrid.src.js"></script>
+    <script type="text/javascript" src="./js/jqGrid/jqgrid/js/i18n/grid.locale-cn.js"></script>
+    <script type="text/javascript" src="./js/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="./js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/ztree/js/jquery.ztree.core.js"></script>
+
+    <script>
+			hljs.initHighlightingOnLoad();
+
+
+
+    </script>
+</head>
+<body>
+<div id="app">
+    <button class="layui-btn" onclick="layerOpen()">代码高亮</button>
+    <button class="layui-btn" onclick="layerZTree()">ztree</button>
+    <button class="layui-btn" onclick="layerZTreeHtml()">加载页面中的ztree</button>
+</div>
+<icon class="glyphicon glyphicon-eur"></icon>
+<icon class="glyphicon glyphicon-remove"></icon>
+<div class="row">
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+    <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+    <div class="col-md-8">.col-md-8</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+    <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+    <div class="col-md-6">.col-md-6</div>
+    <div class="col-md-6">.col-md-6</div>
+</div>
+
+<div>
+    <div></div>
+</div>
+<div id="div_ul">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<div id="result" style="display:block;padding: 8px">
+    <table id="jqGrid"></table>
+    <div id="jqGridPager"></div>
+</div>
+<div id="code">
+        <pre>
+            <code class="java">
+                  public void sendSimpleMailMessage(String to, String subject, String content) {
+                        SimpleMailMessage message = new SimpleMailMessage();
+                        message.setFrom(SENDER);
+                        message.setTo(to);
+                        message.setSubject(subject);
+                        message.setText(content);
+                        try {
+                            mailSender.send(message);
+                        } catch (Exception e) {
+                            logger.error("发送简单邮件时发生异常!", e);
+                        }
+                    }
+            </code>
+        </pre>
+</div>
+<div> 表单提交</div>
+<hr/>
+
+<div class="" style="padding: 12px">
+    <form id="myForm">
+        <div class="row">
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="username" placeholder="First name">
+            </div>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" name="age" placeholder="Last name">
+                <input type="checkbox" class="form-control" name="ball" value="A" placeholder="Last name">
+                <input type="checkbox" class="form-control" name="ball" value="B" placeholder="Last name">
+                <input type="checkbox" class="form-control" name="ball" value="C" placeholder="Last name">
+            </div>
+        </div>
+    </form>
+    <button onclick="_from_validate()">提交</button>
+</div>
+<form>
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-3">
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-1">
+            <label for="name" class="col-form-label">Password</label>
+        </div>
+        <div class="col-sm-3">
+            <input type="password" class="form-control" id="name">
+        </div>
+
+        <div class="col-sm-3">
+            <label for="inputPassword" class="col-form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword">
+        </div>
+    </div>
+</form>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">col-sm-8</div>
+        <div class="col-sm-4">col-sm-4</div>
+    </div>
+    <div class="row">
+        <div class="col-sm">col-sm</div>
+        <div class="col-sm">col-sm</div>
+        <div class="col-sm">col-sm</div>
+    </div>
+</div>
+<div>
+    <ul id="tree" class="ztree">
+
+    </ul>
+</div>
+</body>
+<script style="text/javascript" src="./modules/index/index.js"></script>
+<script type="text/javascript">
+<!--    代码高亮-->
+    function layerOpen() {
+<!--       layer.msg("你好");-->
+        layer.open({
+            type: 1,
+            skin: 'layui-layer-lan',
+            area: ['600px','700px'],
+            content: layui.jquery('#code'),
+            btn: ['确认', '取消', ],
+            yes: function(index,layerO){
+
+            },
+            btn2:function(index,layerO){
+
+            },
+            success: function(layer,index){
+            }
+        });
+    }
+<!--    zTree加载-->
+    function layerZTree () {
+         layer.open({
+            type: 1,
+            skin: 'layui-layer-molv',
+            area: ['600px','700px'],
+            content: layui.jquery('#tree'),
+               btn: ['确认', '取消', ],
+            yes: function(index,layerO){
+
+            },
+            btn2:function(index,layerO){
+
+            },
+            success: function(layer,index){
+            }
+        });
+    }
+
+    function layerZTreeHtml(){
+      layer.open({
+            type: 2,
+            skin: 'layui-layer-molv',
+            area: ['600px','700px'],
+            content: '/web/static/ztree.html',
+            btn: ['确认', '取消', ],
+            yes: function(index,layerO){
+            //需要获取frame 获取需要的数据
+<!--                 var win = document.getElementById("layui-layer-iframe" + index);-->
+                        var win = window['layui-layer-iframe' + index];
+                 layer.alert(JSON.stringify(win.getObject("姓名")));
+
+            },
+            btn2:function(index,layerO){
+
+            },
+            success: function(layer,index){
+            }
+        });
+
+    }
+<!--    序列化对象-->
+    $.fn.serializeObject = function() {
+            var o = {};
+            var a = this.serializeArray();
+            $.each(a, function() {
+                if (o[this.name]) {
+                    if (!o[this.name].push) {
+                        o[this.name] = [ o[this.name] ];
+                    }
+                    o[this.name].push(this.value || '');
+                } else {
+                    o[this.name] = this.value || '';
+                }
+            });
+            return o;
+        }
+
+    function _from_validate(){
+<!--       layer.alert($("#myForm").serialize());-->
+       layer.alert(JSON.stringify($("#myForm").serializeObject(),null,4));
+
+    }
+    var zTree;
+    var setting = {
+        data: {
+            simpleData: {
+                enable: true,
+                // idKey: "zgwbm",
+                // pIdKey: "parentId",
+                // rootPId: ""
+            }
+        }
+    };
+
+$(function(){
+			 var zNodes =[
+				{ id:1, pId:0, name:"展开、折叠 自定义图标不同",iconOpen:"./js/ztree/css/zTreeStyle/img/diy/1_open.png", iconClose:"./js/ztree/css/zTreeStyle/img/diy/1_close.png"},
+				{ id:11, pId:1, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:12, pId:1, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:13, pId:1, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:14, pId:1, name:"叶子节点4",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:15, pId:1, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:2, pId:0, name:"展开、折叠 自定义图标相同",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:21, pId:2, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:22, pId:2, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:23, pId:2, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:3, pId:0, name:"不使用自定义图标",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:31, pId:3, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:32, pId:3, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:33, pId:3, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'}
+			 ];
+			  var str = [{"zgwbm":"123456","postLevel":0,"name":"测试A",icon:'./zTree_v3/css/zTreeStyle/img/diy/1_open.png'},{"zgwbm":"A11111","postLevel":1,"name":"测试A","parentId":"123456"},{"zgwbm":"A11112","postLevel":1,"name":"测试A2","parentId":"123456"}];
+			  zTree = $("#tree");
+			  zTree = $.fn.zTree.init(zTree, setting, zNodes);
+});
+
+<!--         $("#myForm").validate({-->
+<!--                        rules: {-->
+<!--                            username: {-->
+<!--                                required: true,-->
+<!--                            }-->
+<!--                        },-->
+<!--                         messages: {-->
+<!--                              username: {-->
+<!--                                  required: "请输入用户名4&#45;&#45;20个英文字符",-->
+<!--                              }-->
+<!--                 }-->
+<!--                    });-->
+
+
+
+
+</script>
+</html>

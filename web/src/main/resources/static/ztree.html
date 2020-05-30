@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ztree</title>
+    <!-- 样式-->
+    <link rel="stylesheet" type="text/css" href="./js/layui/css/layui.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/jqGrid/jqgrid/css/ui.jqgrid.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/jqGrid/jqgrid/css/css/ui-lightness/jquery-ui-1.8.16.custom.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/highlight/styles/dark.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./js/ztree/css/zTreeStyle/zTreeStyle.css"/>
+
+    <!-- js文件-->
+    <script type="text/javascript" src="./js/jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery/jquery.validate.js"></script>
+    <script type="text/javascript" src="./js/layui/layui.all.js"></script>
+    <script type="text/javascript" src="./js/jqGrid/jqgrid/js/jquery.jqGrid.src.js"></script>
+    <script type="text/javascript" src="./js/jqGrid/jqgrid/js/i18n/grid.locale-cn.js"></script>
+    <script type="text/javascript" src="./js/highlight/highlight.pack.js"></script>
+    <script type="text/javascript" src="./js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/ztree/js/jquery.ztree.core.js"></script>
+</head>
+<body>
+        <div>
+            <ul id="tree" class="ztree"></ul>
+        </div>
+<script type="text/javascript">
+    var zTree;
+    var setting = {
+        data: {
+            simpleData: {
+                enable: true,
+                // idKey: "zgwbm",
+                // pIdKey: "parentId",
+                // rootPId: ""
+            }
+        }
+    };
+
+$(function(){
+			 var zNodes =[
+				{ id:1, pId:0, name:"展开、折叠 自定义图标不同",iconOpen:"./js/ztree/css/zTreeStyle/img/diy/1_open.png", iconClose:"./js/ztree/css/zTreeStyle/img/diy/1_close.png"},
+				{ id:11, pId:1, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:12, pId:1, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:13, pId:1, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:14, pId:1, name:"叶子节点4",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:15, pId:1, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:2, pId:0, name:"展开、折叠 自定义图标相同",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:21, pId:2, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:22, pId:2, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:23, pId:2, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:3, pId:0, name:"不使用自定义图标",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:31, pId:3, name:"叶子节点1",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:32, pId:3, name:"叶子节点2",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'},
+				{ id:33, pId:3, name:"叶子节点3",icon: './js/ztree/css/zTreeStyle/img/diy/2.png'}
+			 ];
+			  var str = [{"zgwbm":"123456","postLevel":0,"name":"测试A",icon:'./zTree_v3/css/zTreeStyle/img/diy/1_open.png'},{"zgwbm":"A11111","postLevel":1,"name":"测试A","parentId":"123456"},{"zgwbm":"A11112","postLevel":1,"name":"测试A2","parentId":"123456"}];
+			  zTree = $("#tree");
+			  zTree = $.fn.zTree.init(zTree, setting, zNodes);
+});
+
+
+function getObject(name) {
+      return {name}
+}
+</script>
+</body>
+</html>

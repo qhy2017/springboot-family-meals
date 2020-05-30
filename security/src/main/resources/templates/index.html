@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <script src="static/js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="static/js/jquery/jquery.cookie.js"></script>
+</head>
+<body>
+      <div>
+          hello worlderer突突突突突突拖拖拖拖拖拖拖
+          <form action="/from" method="get">
+<!--              <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
+              <input type="text" name="username">
+              <input type="submit" value="提交">
+          </form>
+          <span></span>
+      </div>
+</body>
+<script>
+    $("span").text("你好呀");
+</script>
+</html>
