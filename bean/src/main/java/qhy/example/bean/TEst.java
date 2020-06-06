@@ -22,7 +22,7 @@ public class TEst {
         Validator validator = validatorFactory.getValidator();
         User user = new User();
 //        user.setDataId("abe");
-        user.setUsername("渠红元元");
+        user.setUsername("烟火");
         user.setAge(29);
         Set<ConstraintViolation<Object>> validate = validator.validate(user, AddGroup.class);
         System.out.println(validate.size());
