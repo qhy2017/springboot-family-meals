@@ -20,15 +20,13 @@ import java.util.Map;
 @JsonPropertyOrder({"dataId","name","age"})
 public class Student implements Serializable {
     private static final long serialVersionUID = -955460072446130587L;
-    @JsonIgnore
     private String dataId;
-    @JsonIgnore
+
     private String name;
 //
 //    @JsonInclude(JsonInclude.Include.NON_NULL)
 //    private String sex;
 
-    @JsonIgnore
     private Integer age;
 //
 //    private String remark;
@@ -38,14 +36,14 @@ public class Student implements Serializable {
     @JsonDeserialize(using = StringToDateFilter.class,as = Date.class,contentAs = String.class)
     private Date date;
 
-    private Map<String, String> properties = new HashMap<>();
 
-    @JsonAnySetter
-    public void setProperties(String key, String value) {
-        this.properties.put(key, value);
-    }
-    @JsonAnyGetter
-    public Map<String, String> getProperties(){
-        return this.properties;
-    }
+
+//    @JsonAnySetter
+//    public void setProperties(String key, String value) {
+//        this.properties.put(key, value);
+//    }
+//    @JsonAnyGetter
+//    public Map<String, String> getProperties(){
+//        return this.properties;
+//    }
 }

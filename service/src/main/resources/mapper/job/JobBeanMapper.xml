@@ -7,4 +7,12 @@
         select * from qrtz_schedule_job_bean;
     </select>
 
+
+    <select id="sum" resultType="java.util.Map">
+<!--        select convert(sum(t.`name`),char(20)) sum from t_test t;-->
+<!--        select convert(sum(t.`name`),char(20)) sum from t_test t;-->
+        select CAST(sum(t.`name`) AS char(20)) sum from t_test t;
+    </select>
+
+
 </mapper>

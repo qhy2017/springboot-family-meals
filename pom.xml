@@ -14,6 +14,7 @@
 		<module>rabbit-mq</module>
 		<module>security</module>
 		<module>es</module>
+		<module>enjoy</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -88,6 +89,12 @@
 				<artifactId>mybatis-spring-boot-starter</artifactId>
 				<version>2.1.2</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis</artifactId>
+				<version>2.2.7.RELEASE</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-config-server</artifactId>
@@ -116,6 +123,23 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-hystrix</artifactId>
+				<version>${springboot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-data-redis-reactive</artifactId>
 				<version>${springboot.version}</version>
 			</dependency>
 			<dependency>
@@ -218,6 +242,17 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>3.10</version>
 			</dependency>
+			<dependency>
+				<groupId>com.thoughtworks.xstream</groupId>
+				<artifactId>xstream</artifactId>
+				<version>1.4.12</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.dataformat</groupId>
+				<artifactId>jackson-dataformat-xml</artifactId>
+				<version>2.11.1</version>
+			</dependency>
+
 			<!--模块管理 start -->
 			<dependency>
 				<groupId>qhy.example</groupId>
@@ -265,7 +300,20 @@
 				<artifactId>es</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
+			<dependency>
+				<groupId>com.qhy</groupId>
+				<artifactId>enjoy</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
 			<!-- 模块管理结束 end -->
+
+			<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>1.2.73</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 

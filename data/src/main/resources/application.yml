@@ -1,0 +1,40 @@
+server:
+  port: 8881
+spring:
+  application:
+    name: data-provider
+  redis:
+
+    #    cluster:
+    #      max-redirects:      #集群数量
+    #       nodes:
+    #         -
+    host: 127.0.0.1
+    #    sentinel:             #哨兵模式
+    #      master: mymaster
+    #      nodes:              #集群节点
+    #        -
+    ssl: false
+    password:
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 2
+    client-name: redis
+    timeout: 5000
+  cache:
+    cache-names:
+    ehcache:
+      config: classpath:*.xml
+    type: REDIS
+eureka:
+  instance:
+    prefer-ip-address: true #注册服务的时候使用服务的ip地址
+  client:
+     service-url:
+       register-with-eureka: true
+       fetch-registry: true
+       defaultZone: http://localhost:5060/eureka/eureka

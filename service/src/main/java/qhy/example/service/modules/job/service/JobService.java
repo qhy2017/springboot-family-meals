@@ -11,4 +11,6 @@ public interface JobService extends IService<JobBean> {
     boolean insert(JobBean jobBean);
 
     List<Map<String,Object>> queryJobBeanList();
+
+    public List<Map> getSum();
 }

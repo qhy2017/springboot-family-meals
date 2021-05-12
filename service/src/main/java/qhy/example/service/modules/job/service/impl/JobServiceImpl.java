@@ -27,4 +27,9 @@ public class JobServiceImpl extends ServiceImpl<JobBeanDao, JobBean> implements 
     }
 
 
+    public List<Map> getSum(){
+
+        return jobBeanDao.sum();
+    }
+
 }

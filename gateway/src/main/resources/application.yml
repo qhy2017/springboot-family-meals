@@ -1,0 +1,62 @@
+server:
+  port: 8800
+
+spring:
+  application:
+    name: spring-cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: data-provider
+          uri: lb://data-provider
+          predicates:
+            - Path=/provider/**
+          filters:
+            - StripPrefix=1
+#            限流操作
+#            - name: RequestRateLimiter
+#              args:
+#                key-resolver: '#{@hostAddrKeyResolver}'
+#                redis-rate-limiter.replenishRate: 1
+#                redis-rate-limiter.burstCapacity: 3
+
+  redis:
+
+    #    cluster:
+    #      max-redirects:      #集群数量
+    #       nodes:
+    #         -
+    host: 127.0.0.1
+    #    sentinel:             #哨兵模式
+    #      master: mymaster
+    #      nodes:              #集群节点
+    #        -
+    ssl: false
+    password:
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 2
+    client-name: redis
+    timeout: 5000
+#  cache:
+#    cache-names:
+#    ehcache:
+#      config: classpath:*.xml
+#    type: REDIS
+eureka:
+  client:
+    register-with-eureka: false
+    serviceUrl:
+      defaultZone: http://localhost:5060/eureka/eureka
+
+logging:
+  level:
+    org.springframework.cloud.gateway: debug

@@ -10,13 +10,14 @@ function initGrid(){
 			{
 				// url : 'data/JSONData.json',//组件创建完成之后请求数据的url
 				datatype : "local",//请求数据返回的类型。可选json,xml,txt
-				colNames : [ 'Inv No', 'Date', 'Client',  ],//jqGrid的列显示名字
 				colModel : [ //jqGrid每一列的配置信息。包括名字，索引，宽度,对齐方式.....
 				             {name : 'id',index : 'id',width: 160,sortable: false},
 				             {name : 'invdate',index : 'invdate',width: 160,sortable: false},
 				             {name : 'name',index : 'name asc, invdate',width: 160,sortable: false},
 
 				           ],
+				           		   shrinkToFit:true,
+                           						multiselect:true,
 				rowNum : 10,//一页显示多少条
 				rowList : [ 10, 20, 30 ],//可供用户选择一页显示多少条
 				pager : '#jqGridPager',//表格页脚的占位符(一般是div)的id

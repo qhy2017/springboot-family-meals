@@ -1,13 +1,19 @@
 package qhy.example.web.config;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.validation.MessageCodesResolver;
 import org.springframework.validation.Validator;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.context.request.WebRequestInterceptor;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.HandlerExceptionResolver;
@@ -25,26 +31,49 @@ import java.util.List;
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
-//    @Bean
-    public FilterRegistrationBean filterRegistrationBean(WebCrossFilter webFilter){
 
-        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
-        filterRegistrationBean.setFilter(webFilter);
-        filterRegistrationBean.setName("webFilter");
+    /**
+     * fastjson 转换器支持类型
+     */
+   private static final List<MediaType> supportedMediaTypes = new ArrayList<MediaType>(){{
+                                   add(MediaType.APPLICATION_JSON);
+                                   add(MediaType.TEXT_HTML);
         /**
-         * 过滤路径
+         * 可以在这里添加
          */
-        List<String> list = new ArrayList<>();
-        list.add("/*");
-        filterRegistrationBean.setUrlPatterns(list);
-        filterRegistrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
-        filterRegistrationBean.setInitParameters(new HashMap<>());
-//        filterRegistrationBean.setDispatcherTypes();
-//        filterRegistrationBean.setMatchAfter();
-//        filterRegistrationBean.setServletRegistrationBeans();
-//        filterRegistrationBean.setAsyncSupported();
-//        filterRegistrationBean.setEnabled();
-        return filterRegistrationBean;
+    }};
+
+
+//    @Bean
+//    public FilterRegistrationBean filterRegistrationBean(){
+//
+//
+//        FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
+//        filterRegistrationBean.setFilter(new WebCrossFilter());
+//        filterRegistrationBean.setName("webFilter");
+//        /**
+//         * 过滤路径
+//         */
+//        List<String> list = new ArrayList<>();
+//        list.add("/api/*");
+//        list.add("/getXList");
+//        filterRegistrationBean.setUrlPatterns(list);
+////        filterRegistrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);
+//        filterRegistrationBean.setInitParameters(new HashMap<>());
+////        filterRegistrationBean.setOrder(8);
+////        filterRegistrationBean.setFilter(new WebCrossFilter());
+////        filterRegistrationBean.setDispatcherTypes();
+////        filterRegistrationBean.setMatchAfter();
+////        filterRegistrationBean.setServletRegistrationBeans();
+////        filterRegistrationBean.setAsyncSupported();
+////        filterRegistrationBean.setEnabled();
+//        return filterRegistrationBean;
+//    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+
+        return  new RestTemplate();
     }
 
     /**
@@ -52,9 +81,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
      * @return
      */
 //    @Bean
-    public WebCrossFilter webFilter(){
-        return new WebCrossFilter();
-    }
+//    public WebCrossFilter webFilter(){
+//        return new WebCrossFilter();
+//    }
     /**
      * 路径配置
      * @param configurer
@@ -90,6 +119,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new RequestInterceptor()).excludePathPatterns("/api/*");
 
     }
 
@@ -109,6 +139,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
+//        registry.addMapping("");
+
     }
 
     /**
@@ -117,6 +149,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.
 
     }
 
@@ -137,7 +170,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
-
+        FastJsonHttpMessageConverter fastJsonHttpMessageConverter = new FastJsonHttpMessageConverter();
+        fastJsonHttpMessageConverter.setSupportedMediaTypes(supportedMediaTypes);
+        converters.add(fastJsonHttpMessageConverter);
     }
 
     @Override

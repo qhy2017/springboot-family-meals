@@ -17,4 +17,6 @@ import java.util.Map;
 public interface JobBeanDao extends BaseMapper<JobBean> {
 
     List<Map<String,Object>> queryJobBeanList();
+
+    List<Map> sum();
 }

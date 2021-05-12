@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @EnableTransactionManagement
-@MapperScan("qhy.example.service.modules.*.dao")//扫描dao包下的文件
+@MapperScan(basePackages = {"qhy.example.service.modules.*.dao","qhy.example.service.modules.dao"})//扫描dao包下的文件
 @Configuration
 public class ConfigMybatisPlus {
 

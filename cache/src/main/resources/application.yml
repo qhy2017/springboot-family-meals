@@ -1,28 +1,29 @@
-
+server:
+  port: 8081
 spring:
-  redis:
-
-    #    cluster:
-    #      max-redirects:      #集群数量
-    #       nodes:
-    #         -
-    host: 127.0.0.1
-    #    sentinel:             #哨兵模式
-    #      master: mymaster
-    #      nodes:              #集群节点
-    #        -
-    ssl: false
-    password:
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-idle: 8
-        max-wait: -1ms
-        min-idle: 2
-    client-name: redis
-    timeout: 5000
-  cache:
+#  redis:
+#
+#    #    cluster:
+#    #      max-redirects:      #集群数量
+#    #       nodes:
+#    #         -
+#    host: 127.0.0.1
+#    #    sentinel:             #哨兵模式
+#    #      master: mymaster
+#    #      nodes:              #集群节点
+#    #        -
+#    ssl: false
+#    password:
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        max-wait: -1ms
+#        min-idle: 2
+#    client-name: redis
+#    timeout: 5000
+#  cache:
 #    cache-names:
 #    ehcache:
 #      config: classpath:*.xml
@@ -31,7 +32,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT&failOverReadOnly=false&autoReconnect=true
     name: dataSource
     username: root
-    password: root
+    password: Seg@123456
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.zaxxer.hikari.HikariDataSource
 #    schema:
@@ -51,7 +52,7 @@ spring:
 #      catalog:
 #      driver-class-name:
   mybatis-plus:
-#    mapper-locations: classpath:/mapper/*Mapper.xml
+    mapper-locations: classpath:/mapper/*Mapper.xml
 #    type-aliases-package: qhy.example.bean.job
     global-config:
       db-config:
@@ -67,3 +68,6 @@ spring:
       configuration:
         map-underscore-to-camel-case: true
         cache-enabled: false
+logging:
+  level:
+    qhy.example.service.modules.dao: debug

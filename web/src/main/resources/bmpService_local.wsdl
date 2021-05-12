@@ -1,0 +1,598 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://api.ws.common.adminWeb.bmp.seg/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="bmpService" targetNamespace="http://api.ws.common.adminWeb.bmp.seg/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://api.ws.common.adminWeb.bmp.seg/" elementFormDefault="unqualified" targetNamespace="http://api.ws.common.adminWeb.bmp.seg/" version="1.0">
+
+  <xs:element name="receiveAuditFeedbackInfo" type="tns:receiveAuditFeedbackInfo"/>
+
+  <xs:element name="receiveAuditFeedbackInfoResponse" type="tns:receiveAuditFeedbackInfoResponse"/>
+
+  <xs:element name="receiveAuditInfo" type="tns:receiveAuditInfo"/>
+
+  <xs:element name="receiveAuditInfoResponse" type="tns:receiveAuditInfoResponse"/>
+
+  <xs:element name="receiveDeptInfo" type="tns:receiveDeptInfo"/>
+
+  <xs:element name="receiveDeptInfoResponse" type="tns:receiveDeptInfoResponse"/>
+
+  <xs:element name="receiveProjectInfo" type="tns:receiveProjectInfo"/>
+
+  <xs:element name="receiveProjectInfoResponse" type="tns:receiveProjectInfoResponse"/>
+
+  <xs:element name="receiveUserFeedbackInfo" type="tns:receiveUserFeedbackInfo"/>
+
+  <xs:element name="receiveUserFeedbackInfoResponse" type="tns:receiveUserFeedbackInfoResponse"/>
+
+  <xs:complexType name="receiveProjectInfo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ET_PROJ" type="tns:etProj"/>
+      <xs:element minOccurs="0" name="ES_MSG_HEAD" type="tns:esMsgHead"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="etProj">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ABGSL" type="xs:string"/>
+      <xs:element minOccurs="0" name="AEDAT" type="xs:string"/>
+      <xs:element minOccurs="0" name="AEDTE" type="xs:string"/>
+      <xs:element minOccurs="0" name="AEDTP" type="xs:string"/>
+      <xs:element minOccurs="0" name="AENAM" type="xs:string"/>
+      <xs:element minOccurs="0" name="AOXI" type="xs:string"/>
+      <xs:element minOccurs="0" name="ASTNA" type="xs:string"/>
+      <xs:element minOccurs="0" name="ASTNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="AUTOD" type="xs:string"/>
+      <xs:element minOccurs="0" name="BERBU" type="xs:string"/>
+      <xs:element minOccurs="0" name="BERKO" type="xs:string"/>
+      <xs:element minOccurs="0" name="BERST" type="xs:string"/>
+      <xs:element minOccurs="0" name="BERTR" type="xs:string"/>
+      <xs:element minOccurs="0" name="BESTA" type="xs:string"/>
+      <xs:element minOccurs="0" name="BPROF" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD01" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD02" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD03" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD04" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD05" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD06" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD07" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD08" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD09" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD10" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD11" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD12" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD13" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD14" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD15" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD16" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD17" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD18" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD19" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD20" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD21" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD22" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD23" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD24" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD25" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD26" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD27" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD28" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD29" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD30" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD31" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD32" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD33" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD34" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD35" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD36" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD37" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD38" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD39" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD40" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD41" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD42" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD43" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD44" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD45" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD46" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD47" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD48" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD49" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD50" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD51" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD52" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD53" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD54" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD55" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD56" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD57" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD58" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD59" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD60" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD61" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD62" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD63" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD64" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD65" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD66" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD67" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD68" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD69" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD70" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD71" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD72" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD73" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD74" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD75" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD76" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD77" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD78" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD79" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD80" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD81" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD82" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD83" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD84" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD85" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD86" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD87" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD88" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD89" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD90" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD91" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD92" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD93" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD94" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD95" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD96" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD97" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD98" type="xs:string"/>
+      <xs:element minOccurs="0" name="CUSFILD99" type="xs:string"/>
+      <xs:element minOccurs="0" name="DLWZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="DPPPROF" type="xs:string"/>
+      <xs:element minOccurs="0" name="EJDW" type="xs:string"/>
+      <xs:element minOccurs="0" name="EPROG" type="xs:string"/>
+      <xs:element minOccurs="0" name="ERDAT" type="xs:string"/>
+      <xs:element minOccurs="0" name="ERNAM" type="xs:string"/>
+      <xs:element minOccurs="0" name="ETYPE" type="xs:string"/>
+      <xs:element minOccurs="0" name="EWPLF" type="xs:string"/>
+      <xs:element minOccurs="0" name="FERC_IND" type="xs:string"/>
+      <xs:element minOccurs="0" name="FLGVRG" type="xs:string"/>
+      <xs:element minOccurs="0" name="FMPRF" type="xs:string"/>
+      <xs:element minOccurs="0" name="FUNC_AREA" type="xs:string"/>
+      <xs:element minOccurs="0" name="GLJB" type="xs:string"/>
+      <xs:element minOccurs="0" name="GNFL" type="xs:string"/>
+      <xs:element minOccurs="0" name="GRTOP" type="xs:string"/>
+      <xs:element minOccurs="0" name="HBM" type="xs:string"/>
+      <xs:element minOccurs="0" name="HBXZC" type="xs:string"/>
+      <xs:element minOccurs="0" name="IMPRF" type="xs:string"/>
+      <xs:element minOccurs="0" name="INACT" type="xs:string"/>
+      <xs:element minOccurs="0" name="JCPFWH" type="xs:string"/>
+      <xs:element minOccurs="0" name="JGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="JHKGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="JHWGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="JIBCL" type="xs:string"/>
+      <xs:element minOccurs="0" name="JIBSA" type="xs:string"/>
+      <xs:element minOccurs="0" name="JTDZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="JXMBM" type="xs:string"/>
+      <xs:element minOccurs="0" name="KALID" type="xs:string"/>
+      <xs:element minOccurs="0" name="KH" type="xs:string"/>
+      <xs:element minOccurs="0" name="KIMSK" type="xs:string"/>
+      <xs:element minOccurs="0" name="KOSTL" type="xs:string"/>
+      <xs:element minOccurs="0" name="KTRG" type="xs:string"/>
+      <xs:element minOccurs="0" name="KYPFWH" type="xs:string"/>
+      <xs:element minOccurs="0" name="KYXL" type="xs:string"/>
+      <xs:element minOccurs="0" name="KZBWS" type="xs:string"/>
+      <xs:element minOccurs="0" name="KZERB" type="xs:string"/>
+      <xs:element minOccurs="0" name="LOEVM" type="xs:string"/>
+      <xs:element minOccurs="0" name="LOGSYSTEM" type="xs:string"/>
+      <xs:element minOccurs="0" name="NZANZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="OBJNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="OTYPE" type="xs:string"/>
+      <xs:element minOccurs="0" name="PARGR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PFWH" type="xs:string"/>
+      <xs:element minOccurs="0" name="PFZTZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="PGPRF" type="xs:string"/>
+      <xs:element minOccurs="0" name="PLFAZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="PLINT" type="xs:string"/>
+      <xs:element minOccurs="0" name="PLNAW" type="xs:string"/>
+      <xs:element minOccurs="0" name="PLSEZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="POSNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="POST1" type="xs:string"/>
+      <xs:element minOccurs="0" name="POSTU" type="xs:string"/>
+      <xs:element minOccurs="0" name="PPROF" type="xs:string"/>
+      <xs:element minOccurs="0" name="PRCTR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PROFL" type="xs:string"/>
+      <xs:element minOccurs="0" name="PROJ_STATUS" type="xs:string"/>
+      <xs:element minOccurs="0" name="PSPID" type="xs:string"/>
+      <xs:element minOccurs="0" name="PSPID_EDIT" type="xs:string"/>
+      <xs:element minOccurs="0" name="PSPNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PWHIE" type="xs:string"/>
+      <xs:element minOccurs="0" name="RECID" type="xs:string"/>
+      <xs:element minOccurs="0" name="SCHTYP" type="xs:string"/>
+      <xs:element minOccurs="0" name="SCOPE" type="xs:string"/>
+      <xs:element minOccurs="0" name="SCPRF" type="xs:string"/>
+      <xs:element minOccurs="0" name="SDJE" type="xs:string"/>
+      <xs:element minOccurs="0" name="SIPID" type="xs:string"/>
+      <xs:element minOccurs="0" name="SJKGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="SJWGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="SMPRF" type="xs:string"/>
+      <xs:element minOccurs="0" name="SPART" type="xs:string"/>
+      <xs:element minOccurs="0" name="SPROG" type="xs:string"/>
+      <xs:element minOccurs="0" name="SPSNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="STORT" type="xs:string"/>
+      <xs:element minOccurs="0" name="STSPD" type="xs:string"/>
+      <xs:element minOccurs="0" name="STSPR" type="xs:string"/>
+      <xs:element minOccurs="0" name="TDLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="TRMEQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="TXJCD" type="xs:string"/>
+      <xs:element minOccurs="0" name="TXTSP" type="xs:string"/>
+      <xs:element minOccurs="0" name="TZLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="VBELN" type="xs:string"/>
+      <xs:element minOccurs="0" name="VBUKR" type="xs:string"/>
+      <xs:element minOccurs="0" name="VERNA" type="xs:string"/>
+      <xs:element minOccurs="0" name="VERNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="VGPLF" type="xs:string"/>
+      <xs:element minOccurs="0" name="VGSBR" type="xs:string"/>
+      <xs:element minOccurs="0" name="VKOKR" type="xs:string"/>
+      <xs:element minOccurs="0" name="VKORG" type="xs:string"/>
+      <xs:element minOccurs="0" name="VNAME" type="xs:string"/>
+      <xs:element minOccurs="0" name="VPKSTU" type="xs:string"/>
+      <xs:element minOccurs="0" name="VPROF" type="xs:string"/>
+      <xs:element minOccurs="0" name="VTWEG" type="xs:string"/>
+      <xs:element minOccurs="0" name="WERKS" type="xs:string"/>
+      <xs:element minOccurs="0" name="WFGB" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMCB" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMDL" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMGJ" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMMXLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMSZD" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMWH" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMXFL" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMXL" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMXZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMZL" type="xs:string"/>
+      <xs:element minOccurs="0" name="XMZTZ" type="xs:string"/>
+      <xs:element minOccurs="0" name="XSTAT" type="xs:string"/>
+      <xs:element minOccurs="0" name="YKBM" type="xs:string"/>
+      <xs:element minOccurs="0" name="YOUT" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZAICBM" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZCBPSPID" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZDP" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZEPSID" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZGLGX" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZHTBH" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZHTJE" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZHTLB" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZHYLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZJLY" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZJXQK" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZNWJY" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZQZBGRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZRWSID" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZSBLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZSCHM" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZTEHT" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZUORD" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZUPDATEFLAG" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZXFL" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZXMDJ" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZXMSR" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZXMZJRQ" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZXSSX" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZYWLX" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZYZBM" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZYZXMID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="esMsgHead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GUID" type="xs:string"/>
+      <xs:element minOccurs="0" name="INTERFACE_ID" type="xs:string"/>
+      <xs:element minOccurs="0" name="MANDT" type="xs:string"/>
+      <xs:element minOccurs="0" name="OPERATOR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PROXY_ID" type="xs:string"/>
+      <xs:element minOccurs="0" name="RECIVER" type="xs:string"/>
+      <xs:element minOccurs="0" name="SENDER" type="xs:string"/>
+      <xs:element minOccurs="0" name="SENDTIME" type="xs:string"/>
+      <xs:element minOccurs="0" name="SPRAS" type="xs:string"/>
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveProjectInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="projectMsg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveAuditFeedbackInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EV_XML_SIZE" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_RESERVE1" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_RESERVE2" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ET_RETURN" type="tns:etReturn"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="etReturn">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APNUM" type="xs:string"/>
+      <xs:element minOccurs="0" name="MESSAGE" type="xs:string"/>
+      <xs:element minOccurs="0" name="STUNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="TYPE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveAuditFeedbackInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auditFeedbackMsg" type="tns:resAuditFeedback"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resAuditFeedback">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="ET_RETURN" nillable="true" type="tns:etReturn"/>
+      <xs:element minOccurs="0" name="EV_RESERVE1" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_RESERVE2" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_XML_SIZE" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveAuditInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IV_SIZE" type="xs:string"/>
+      <xs:element minOccurs="0" name="IV_LOGSYS" type="xs:string"/>
+      <xs:element minOccurs="0" name="IV_RESERVE1" type="xs:string"/>
+      <xs:element minOccurs="0" name="IV_RESERVE2" type="xs:string"/>
+      <xs:element minOccurs="0" name="IV_RESERVE3" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IT_XML" type="tns:itXml"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IT_APNUM" type="tns:itApnum"/>
+      <xs:element minOccurs="0" name="SYWTY" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itXml">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="XDATA" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itApnum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APNUM" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveAuditInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auditMsg" type="tns:resAudit"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="resAudit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EV_MTYPE" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_RESERVE1" type="xs:string"/>
+      <xs:element minOccurs="0" name="EV_RESERVE2" type="xs:string"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IT_HEAD" nillable="true" type="tns:itHead"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IT_TIEM" nillable="true" type="tns:itTiem"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itHead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="APNUM" type="xs:string"/>
+      <xs:element minOccurs="0" name="BUKRS" type="xs:string"/>
+      <xs:element minOccurs="0" name="DOCNO" type="xs:string"/>
+      <xs:element minOccurs="0" name="KALSM" type="xs:string"/>
+      <xs:element minOccurs="0" name="MESSAGE" type="xs:string"/>
+      <xs:element minOccurs="0" name="SYWTY" type="xs:string"/>
+      <xs:element minOccurs="0" name="VERSN" type="xs:string"/>
+      <xs:element minOccurs="0" name="VTEXT" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZSPVER" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itTiem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CZDAT" type="xs:string"/>
+      <xs:element minOccurs="0" name="CZNAM" type="xs:string"/>
+      <xs:element minOccurs="0" name="CZZET" type="xs:string"/>
+      <xs:element minOccurs="0" name="KALSM" type="xs:string"/>
+      <xs:element minOccurs="0" name="REMRK" type="xs:string"/>
+      <xs:element minOccurs="0" name="STUNR" type="xs:string"/>
+      <xs:element minOccurs="0" name="ZSPVER" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveDeptInfo">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IT_DEPT" type="tns:itDept"/>
+      <xs:element minOccurs="0" name="ES_MSG_HEAD" type="tns:esMsgHead"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="itDept">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEPTNO" type="xs:string"/>
+      <xs:element minOccurs="0" name="FULNAME" type="xs:string"/>
+      <xs:element minOccurs="0" name="NODE_KEY" type="xs:string"/>
+      <xs:element minOccurs="0" name="RCOMP" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveDeptInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="deptMsg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveUserFeedbackInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IS_MSG_HEAD" type="tns:isMsgHead"/>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="IS_RESP" type="tns:isResp"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isMsgHead">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GUID" type="xs:string"/>
+      <xs:element minOccurs="0" name="INTERFACE_ID" type="xs:string"/>
+      <xs:element minOccurs="0" name="MANDT" type="xs:string"/>
+      <xs:element minOccurs="0" name="OPERATOR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PROXY_ID" type="xs:string"/>
+      <xs:element minOccurs="0" name="RECIVER" type="xs:string"/>
+      <xs:element minOccurs="0" name="SENDER" type="xs:string"/>
+      <xs:element minOccurs="0" name="SENDTIME" type="xs:string"/>
+      <xs:element minOccurs="0" name="SPRAS" type="xs:string"/>
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="isResp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BNAME" type="xs:string"/>
+      <xs:element minOccurs="0" name="NODE_KEY" type="xs:string"/>
+      <xs:element minOccurs="0" name="PRCTR" type="xs:string"/>
+      <xs:element minOccurs="0" name="PSPID" type="xs:string"/>
+      <xs:element minOccurs="0" name="PSTON" type="xs:string"/>
+      <xs:element minOccurs="0" name="RCOMP" type="xs:string"/>
+      <xs:element minOccurs="0" name="RESULT" type="xs:string"/>
+      <xs:element minOccurs="0" name="TEXT" type="xs:string"/>
+      <xs:element minOccurs="0" name="VERNR" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveUserFeedbackInfoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="userMsg" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="receiveProjectInfo">
+    <wsdl:part element="tns:receiveProjectInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveAuditFeedbackInfo">
+    <wsdl:part element="tns:receiveAuditFeedbackInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveAuditFeedbackInfoResponse">
+    <wsdl:part element="tns:receiveAuditFeedbackInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveAuditInfoResponse">
+    <wsdl:part element="tns:receiveAuditInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveDeptInfoResponse">
+    <wsdl:part element="tns:receiveDeptInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveProjectInfoResponse">
+    <wsdl:part element="tns:receiveProjectInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveAuditInfo">
+    <wsdl:part element="tns:receiveAuditInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveDeptInfo">
+    <wsdl:part element="tns:receiveDeptInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveUserFeedbackInfo">
+    <wsdl:part element="tns:receiveUserFeedbackInfo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveUserFeedbackInfoResponse">
+    <wsdl:part element="tns:receiveUserFeedbackInfoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="bmpService">
+    <wsdl:operation name="receiveProjectInfo">
+      <wsdl:input message="tns:receiveProjectInfo" name="receiveProjectInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveProjectInfoResponse" name="receiveProjectInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveAuditFeedbackInfo">
+      <wsdl:input message="tns:receiveAuditFeedbackInfo" name="receiveAuditFeedbackInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveAuditFeedbackInfoResponse" name="receiveAuditFeedbackInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveAuditInfo">
+      <wsdl:input message="tns:receiveAuditInfo" name="receiveAuditInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveAuditInfoResponse" name="receiveAuditInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveDeptInfo">
+      <wsdl:input message="tns:receiveDeptInfo" name="receiveDeptInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveDeptInfoResponse" name="receiveDeptInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveUserFeedbackInfo">
+      <wsdl:input message="tns:receiveUserFeedbackInfo" name="receiveUserFeedbackInfo">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveUserFeedbackInfoResponse" name="receiveUserFeedbackInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="bmpServiceSoapBinding" type="tns:bmpService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="receiveProjectInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveProjectInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveProjectInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveAuditFeedbackInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveAuditFeedbackInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveAuditFeedbackInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveAuditInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveAuditInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveAuditInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveDeptInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveDeptInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveDeptInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="receiveUserFeedbackInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveUserFeedbackInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveUserFeedbackInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="bmpService">
+    <wsdl:port binding="tns:bmpServiceSoapBinding" name="BmpServiceImplPort">
+      <soap:address location="http://localhost:8080/services/bmpService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

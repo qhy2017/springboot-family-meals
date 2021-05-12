@@ -26,30 +26,53 @@ server:
 #    max-http-form-post-size: 2MB
 #    max-swallow-size: 2MB
 #    max-threads: 200
+  tomcat:
+    accesslog:
+       buffered: true
+       directory: D:/logs/app
+       enabled: true
+       file-date-format: .yyyy-MM-dd
+       pattern: common
+       prefix: access_log
+       rename-on-rotate: false
+       request-attributes-enabled: false
+       rotate: true
+       suffix: .log
+
+#  server.tomcat.accesslog.buffered=true
+#  server.tomcat.accesslog.directory=D:/logs/app
+#  server.tomcat.accesslog.enabled=true
+#  server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+#  server.tomcat.accesslog.pattern=common
+#  server.tomcat.accesslog.prefix=access_log
+#  server.tomcat.accesslog.rename-on-rotate=false
+#  server.tomcat.accesslog.request-attributes-enabled=false
+#  server.tomcat.accesslog.rotate=true
+#  server.tomcat.accesslog.suffix=.log
 
 spring:
-  redis:
-
-#    cluster:
-#      max-redirects:      #集群数量
-#       nodes:
-#         -
-    host: 127.0.0.1
-#    sentinel:             #哨兵模式
-#      master: mymaster
-#      nodes:              #集群节点
-#        -
-#    ssl: false
-#    password:
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-idle: 8
-        max-wait: -1ms
-        min-idle: 2
-    client-name: redis
-    timeout: 5000
+#  redis:
+#
+##    cluster:
+##      max-redirects:      #集群数量
+##       nodes:
+##         -
+#    host: 127.0.0.1
+##    sentinel:             #哨兵模式
+##      master: mymaster
+##      nodes:              #集群节点
+##        -
+##    ssl: false
+##    password:
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-idle: 8
+#        max-wait: -1ms
+#        min-idle: 2
+#    client-name: redis
+#    timeout: 5000
 #  cache:
 #    cache-names:
 #    ehcache:
@@ -81,7 +104,7 @@ spring:
 #      location: /upload
 #      file-size-threshold: 0B
 # templates文件夹的路径
-  thymeleaf:
-    prefix: classpath:/templates/
-  # templates中的所有文件后缀名，如/templates/main.html
-    suffix: .html
+#  thymeleaf:
+#    prefix: classpath:/templates/
+#  # templates中的所有文件后缀名，如/templates/main.html
+#    suffix: .html
